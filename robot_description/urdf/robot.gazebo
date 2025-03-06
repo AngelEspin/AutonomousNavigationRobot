@@ -1,0 +1,358 @@
+<?xml version="1.0" ?>
+<robot name="six_wheeled_robot">
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+<xacro:property name="black_color" value="Gazebo/FlatBlack" />
+<xacro:property name="body_friction" value="0.01" />
+<xacro:property name="wheel_friction" value="2.5" />
+<xacro:property name="caster_friction" value="0.5" />
+
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="control"/>
+</gazebo>
+
+<gazebo reference="conexion_mr">
+  <material>Gazebo/Blue</material>
+  <mu1>${body_friction}</mu1>
+  <mu2>${body_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="l2_l3_modificado-2">
+  <material>Gazebo/Green</material>
+  <mu1>${body_friction}</mu1>
+  <mu2>${body_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="l2_l3_modificado-2_2">
+  <material>Gazebo/Green</material>
+  <mu1>${body_friction}</mu1>
+  <mu2>${body_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+
+<gazebo reference="l1">
+  <material>Gazebo/Red</material>
+  <mu1>${body_friction}</mu1>
+  <mu2>${body_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="rueda10cm">
+  <material>${black_color}</material>
+  <mu1>${caster_friction}</mu1>
+  <mu2>${caster_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rueda10cm_2">
+  <material>${black_color}</material>
+  <mu1>${wheel_friction}</mu1>
+  <mu2>${wheel_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rueda10cm_3">
+  <material>${black_color}</material>
+  <mu1>${caster_friction}</mu1>
+  <mu2>${caster_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rueda10cm_4">
+  <material>${black_color}</material>
+  <mu1>${caster_friction}</mu1>
+  <mu2>${caster_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rueda10cm_5">
+  <material>${black_color}</material>
+  <mu1>${wheel_friction}</mu1>
+  <mu2>${wheel_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rueda10cm_6">
+  <material>${black_color}</material>
+  <mu1>${caster_friction}</mu1>
+  <mu2>${caster_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+<gazebo>
+  <plugin name="wheel_controller_1" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R1</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+    
+  </plugin>
+</gazebo>
+<gazebo>
+    <plugin name="wheel_controller_2" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R2</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+</gazebo>
+<gazebo>
+  </plugin>
+
+    <plugin name="wheel_controller_3" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R3</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+    
+  </plugin>
+</gazebo>
+<gazebo>
+    <plugin name="wheel_controller_4" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R4</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+    
+  </plugin>
+</gazebo>
+<gazebo>
+    <plugin name="wheel_controller_5" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R5</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+    
+  </plugin>
+</gazebo>
+<gazebo>
+    <plugin name="wheel_controller_6" filename="libgazebo_ros_diff_drive.so">
+
+    <!-- Plugin update rate in Hz -->
+    <updateRate>60</updateRate>
+
+    <!-- Name of the first wheel joint -->
+    <jointName>Junta_R6</jointName>
+
+    <!-- Diameter of the wheel, in meters -->
+    <wheelDiameter>0.05</wheelDiameter>
+
+    <!-- Maximum torque which the wheel can produce, in Nm -->
+    <wheelTorque>20</wheelTorque>
+
+    <!-- Topic to receive geometry_msgs/Twist message commands for the wheel -->
+    <commandTopic>cmd_vel</commandTopic>
+
+    <!-- Topic to publish nav_msgs/Odometry messages for the wheel -->
+    <odometryTopic>odom</odometryTopic>
+
+    <!-- Odometry frame for the wheel -->
+    <odometryFrame>odom</odometryFrame>
+
+    <!-- Robot frame to calculate odometry from -->
+    <robotBaseFrame>l1</robotBaseFrame>
+
+    <!-- Set to true to publish transforms for the wheel link -->
+    <publishWheelTF>true</publishWheelTF>
+
+    <!-- Set to true to publish transforms for the wheel odometry -->
+    <publishOdom>true</publishOdom>
+
+    <!-- Set to true to publish sensor_msgs/JointState on /joint_states for the wheel -->
+    <publishWheelJointState>true</publishWheelJointState>
+    
+  </plugin>
+
+</gazebo>
+
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rrbot/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>Junta_Camara</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+</robot>

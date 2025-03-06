@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<robot name="robot" fixed_frame="dummy">
+  <static>true</static>
+  <link name="dummy" fixed="true">
+  </link>  
+
+  <link name="l1">
+    <visual>
+      <origin xyz="-0.1623976833979026424 -0.20144544793473978528 0.26749193742773980098" rpy="1.5707963207290305263 2.9721157967096936663e-09 3.8418044321784632697e-10" />
+      
+      <geometry>
+        <mesh filename="package://robot_description/archives/l1.stl"/>
+      </geometry>
+      <material name="l1_material">
+        <color rgba="0.12941176470588236502 0.54117647058823525885 0.12941176470588236502 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.1623976833979026424 -0.20144544793473978528 0.26749193742773980098" rpy="1.5707963207290305263 2.9721157967096936663e-09 3.8418044321784632697e-10" />
+      <geometry>
+        <mesh filename="package://robot_description/archives/l1.stl"/>
+      </geometry>
+    </collision>
+    
+    <inertial>
+      <origin xyz="-0.18259398235284227119 -0.20236856510100109663 0.28038785160103718574" rpy="0 0 0"/>
+      <mass value="1.1600736868674601521" />
+      <inertia ixx="0.0066008651014344225244" ixy="0.000135586235209932273"  ixz="-0.0014781260412425468835" iyy="0.0106966871170354038" iyz="6.649765397261118234e-05" izz="0.015519266864299045838" />
+    </inertial>
+  </link>
+
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy"/>
+    <child link="l1"/>
+  </joint>
+
+  <link name="l2_l3_modificado-2">
+    <visual>
+      <origin xyz="5.5511151231257827021e-17 0 -0.038999999999999979128" rpy="1.570796326794896558 4.2986550190141303174e-25 -3.216697786438753181e-18" />
+      <geometry>
+        <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+      </geometry>
+      <material name="l2_l3_modificado-2_material">
+        <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="5.5511151231257827021e-17 0 -0.038999999999999979128" rpy="1.570796326794896558 4.2986550190141303174e-25 -3.216697786438753181e-18" />
+      <geometry>
+        <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.041604917307636699042 -0.00094186232242258831858 -0.016999999999999983874" rpy="0 0 0"/>
+      <mass value="0.19878085526035954578" />
+      <inertia ixx="0.00045600719533735693942" ixy="-2.1979347753071152987e-06"  ixz="-1.0461624586299991404e-28" iyy="0.0001117948906171440602" iyz="9.2711153304661378454e-30" izz="0.00048695372639961931327" />
+    </inertial>
+  </link>
+
+  <link name="rueda10cm">
+    <visual>
+      <origin xyz="1.3877787807814456755e-17 0 -0.0030000000000000026645" rpy="-3.141592653589793116 -1.3232887103194747433e-25 2.6346479003792640069e-17" />
+      <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+      </geometry>
+      <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="1.3877787807814456755e-17 0 -0.0030000000000000026645" rpy="-3.141592653589793116 -1.3232887103194747433e-25 2.6346479003792640069e-17" />
+      <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+      </geometry>
+    </collision>
+    <inertial>
+      <origin xyz="1.294233490998378539e-17 9.8517850733825063838e-27 -0.022983887084686488445" rpy="0 0 0"/>
+      <mass value="0.39299360600999816429" />
+      <inertia ixx="0.00029793490712322410856" ixy="1.3173188654394999504e-20"  ixz="9.1874021171282252066e-29" iyy="0.00029793490712322416277" iyz="3.7183220189298748782e-29" izz="0.00049087753367729617185" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R2" type="continuous">
+      <origin xyz="0.060104076400856659701 0.060104076400856493168 0.0050000000000000044409" rpy="-3.141592653589793116 2.9562705873466152294e-18 -1.8301287006490860598" />
+      <parent link="l2_l3_modificado-2" />
+      <child link="rueda10cm" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <link name="rueda10cm_2">
+    <visual>
+        <origin xyz="0 -1.3877787807814456755e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -2.6504195547553351625e-25 -5.0019989647842346759e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+        <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0 -1.3877787807814456755e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -2.6504195547553351625e-25 -5.0019989647842346759e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="-9.3545290370249415002e-19 -1.387778780482895257e-17 -0.022983887084686488445" rpy="0 0 0"/>
+        <mass value="0.39299360600999816429" />
+        <inertia ixx="0.00029793490712322421698" ixy="-2.5879488531348470936e-20"  ixz="2.7564737175589557739e-28" iyy="0.00029793490712322405435" iyz="-3.6156487985184271184e-28" izz="0.00049087753367729617185" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R4" type="continuous">
+      <origin xyz="0.060104076400856659701 -0.060104076400856465412 0.0049999999999999489297" rpy="-3.141592653589793116 7.3658748660732636819e-17 0.92941691210605825724" />
+      <parent link="l2_l3_modificado-2" />
+      <child link="rueda10cm_2" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <joint name="Junta_Pasiva_Derecha" type="revolute">
+      <origin xyz="-0.12847176905482229903 -0.32544544781112361154 0.28572223970686733141" rpy="1.5707960183954783329 1.5511261948845664893 -3.0795557762774570826e-07" />
+      <parent link="l1" />
+      <child link="l2_l3_modificado-2" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" lower="-0.56" upper="2.0071286397934788859"/>
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <link name="l2_l3_modificado-2_2">
+    <visual>
+        <origin xyz="5.5511151231257827021e-17 -2.7755575615628913511e-17 -0.039000000000000006883" rpy="1.570796326794896558 -8.2858707243642392136e-26 -3.3812745298728782663e-18" />
+        <geometry>
+        <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+        </geometry>
+        <material name="l2_l3_modificado-2_material">
+        <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="5.5511151231257827021e-17 -2.7755575615628913511e-17 -0.039000000000000006883" rpy="1.570796326794896558 -8.2858707243642392136e-26 -3.3812745298728782663e-18" />
+        <geometry>
+        <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="0.041604917307636699042 -0.00094186232242261607416 -0.01700000000000001163" rpy="0 0 0"/>
+        <mass value="0.19878085526035954578" />
+        <inertia ixx="0.00045600719533735715626" ixy="-2.1979347753071165692e-06"  ixz="4.9485917399825457933e-28" iyy="0.0001117948906171440602" iyz="-6.0931890735852266954e-30" izz="0.00048695372639961931327" />
+    </inertial>
+  </link>
+
+  <link name="rueda10cm_3">
+    <visual>
+        <origin xyz="0 -4.1633363423443370266e-17 -0.0030000000000000026645" rpy="3.141592653589793116 2.4908934271607221179e-25 -8.0053156761873463748e-18" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+        <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0 -4.1633363423443370266e-17 -0.0030000000000000026645" rpy="3.141592653589793116 2.4908934271607221179e-25 -8.0053156761873463748e-18" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="-9.3545289037793300012e-19 -4.1633363414700092053e-17 -0.022983887084686488445" rpy="0 0 0"/>
+        <mass value="0.39299360600999816429" />
+        <inertia ixx="0.00029793490712322421698" ixy="-2.439209806515452231e-21"  ixz="-2.0483036187190332069e-28" iyy="0.00029793490712322416277" iyz="-2.9292185877211298753e-28" izz="0.00049087753367729638869" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R3" type="continuous">
+      <origin xyz="0.060104076400856631945 0.060104076400856520923 0.0049999999999999905631" rpy="-3.141592653589793116 -4.2241592123221963104e-16 -0.49922167178213477934" />
+      <parent link="l2_l3_modificado-2_2" />
+      <child link="rueda10cm_3" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <link name="rueda10cm_4">
+    <visual>
+        <origin xyz="0 6.9388939039072283776e-18 -0.0029999999999999887867" rpy="3.141592653589793116 -1.1528672886827154028e-24 1.4271986254412883463e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+        <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0 6.9388939039072283776e-18 -0.0029999999999999887867" rpy="3.141592653589793116 -1.1528672886827154028e-24 1.4271986254412883463e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="-9.3545291045017016982e-19 6.9388939147764589971e-18 -0.022983887084686474567" rpy="0 0 0"/>
+        <mass value="0.39299360600999816429" />
+        <inertia ixx="0.00029793490712322421698" ixy="7.2000410004067763659e-22"  ixz="7.0590919239142746815e-28" iyy="0.00029793490712322416277" iyz="-2.9065917041569690948e-28" izz="0.00049087753367729638869" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R1" type="continuous">
+      <origin xyz="0.060104076400856659701 -0.060104076400856507045 0.0049999999999999905631" rpy="-3.141592653589793116 -7.6282239131955771344e-16 -0.25904331776269451382" />
+      <parent link="l2_l3_modificado-2_2" />
+      <child link="rueda10cm_4" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <joint name="Junta_Pasiva_Izquierda" type="revolute">
+      <origin xyz="-0.12847176915009908549 -0.077445447811123502291 0.28572223820253256354" rpy="1.5707966702343139076 1.5531332946124785099 -3.141592309819767781" />
+      <parent link="l1" />
+      <child link="l2_l3_modificado-2_2" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" lower="-2.0071286397934788859" upper="0.56"/>
+      <joint_properties friction="0.0"/>
+  </joint>
+  <link name="rueda10cm_5">
+    <visual>
+        <origin xyz="-5.5511151231257827021e-17 3.8163916471489756077e-17 -0.0030000000000000026645" rpy="3.141592653589793116 4.5599766001557814531e-26 -5.3448204808567667487e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+        <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="-5.5511151231257827021e-17 3.8163916471489756077e-17 -0.0030000000000000026645" rpy="3.141592653589793116 4.5599766001557814531e-26 -5.3448204808567667487e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="-5.6446604118712877449e-17 3.8163916471733212111e-17 -0.022983887084686488445" rpy="0 0 0"/>
+        <mass value="0.39299360600999816429" />
+        <inertia ixx="0.00029793490712322421698" ixy="-2.3218875773836857727e-20"  ixz="-2.1600035251038875236e-28" iyy="0.00029793490712322416277" iyz="-1.1080630077344665209e-28" izz="0.00049087753367729617185" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R5" type="continuous">
+      <origin xyz="-0.31664389559457595258 -0.077445448247987117019 0.22562009378018710315" rpy="1.5707963196849008547 0.54880942899339246743 -3.3249042015534336724e-09" />
+      <parent link="l1" />
+      <child link="rueda10cm_5" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  <link name="rueda10cm_6">
+    <visual>
+        <origin xyz="-5.5511151231257827021e-17 2.7755575615628913511e-17 -0.0030000000000000026645" rpy="-3.141592653589793116 -4.8443625614625081283e-25 6.2726312896667128663e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+        <material name="rueda10cm_material">
+        <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="-5.5511151231257827021e-17 2.7755575615628913511e-17 -0.0030000000000000026645" rpy="-3.141592653589793116 -4.8443625614625081283e-25 6.2726312896667128663e-17" />
+        <geometry>
+          <mesh filename="package://robot_description/archives/rueda10cm.stl"/> 
+        </geometry>
+    </collision>
+    <inertial>
+        <origin xyz="-5.6446604113580856548e-17 2.7755575623592649238e-17 -0.022983887084686488445" rpy="0 0 0"/>
+        <mass value="0.39299360600999816429" />
+        <inertia ixx="0.00029793490712322421698" ixy="-3.8673658401404432998e-20"  ixz="-1.8414552764643867941e-28" iyy="0.00029793490712322427119" iyz="-9.4221902638914639646e-29" izz="0.00049087753367729617185" />
+    </inertial>
+  </link>
+
+  <joint name="Junta_R6" type="continuous">
+      <origin xyz="-0.31664389549929922163 -0.32544544824798721239 0.22562009528452187102" rpy="-1.5707963357497458645 0.82659653085727002875 -6.2032771584579110388e-09" />
+      <parent link="l1" />
+      <child link="rueda10cm_6" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" />
+      <joint_properties friction="0.0"/>
+  </joint>
+ 
+
+
+  <transmission name="wj1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R1">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wj2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R2">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj2_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wj3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R3">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj3_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wj4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R4">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj4_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="wj5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R5">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj5_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <transmission name="wj6_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R6">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="$wj6_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+
+   <gazebo reference="rueda10cm">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rueda10cm_2">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rueda10cm_3">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rueda10cm_4">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rueda10cm_5">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+
+  <gazebo reference="rueda10cm_6">
+    <mu1 value="200.0"/>
+    <mu2 value="100.0"/>
+    <kp value="10000000.0" />
+    <kd value="1.0" />
+    <material>Gazebo/Grey</material>
+  </gazebo>
+  
+  <gazebo reference="l1">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="l2_l3_modificado-2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="l2_l3_modificado-2_2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+
+  <gazebo reference="conexion_mr">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+    <gazebo reference="velodyne">
+    <sensor type="ray" name="velodyne-VLP16">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1875</samples>
+            <resolution>1</resolution>
+              <min_angle>-3.1415926535897931</min_angle>
+              <max_angle>3.1415926535897931</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>16</samples>
+            <resolution>1</resolution>
+            <min_angle>-0.26</min_angle>
+            <max_angle>0.26</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.9</min>
+          <max>131.0</max>
+          <resolution>0.001</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.0</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_laser.so">
+        <topicName>/velodyne_points</topicName>
+        <frameName>velodyne</frameName>
+        <min_range>0.9</min_range>
+        <max_range>130.0</max_range>
+        <gaussianNoise>0.008</gaussianNoise>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>50.0</updateRate>
+      <bodyName>l1</bodyName>
+      <topicName>ground_truth/state</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>world</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+  <gazebo>
+  <plugin name="imu_controller" filename="libgazebo_ros_imu.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>20.0</updateRate>
+    <bodyName>conexion_mr</bodyName>
+    <topicName>imu</topicName>
+    <gaussianNoise>0.05</gaussianNoise>
+    <frameName>conexion_mr</frameName>
+    <xyzOffsets>0 0 0</xyzOffsets>
+    <rpyOffset>0 0 0</rpyOffset>
+    <serviceName>/default_imu</serviceName>
+  </plugin>
+  </gazebo>
+	
+  <joint name="Junta_Camara" type="revolute">
+      <origin xyz="-0.045397683175287389945 -0.19294544742878483312 0.34349193702844238452" rpy="-1.5707963389266283993 -1.0471975482244821887 1.0890568890590110418e-08" />
+      <parent link="l1" />
+      <child link="conexion_mr" />
+      <axis xyz="0 0 1"/>
+      <limit effort="1" velocity="20" lower="5.712388980384689674" upper="6.2359877559829888227"/>
+      <joint_properties friction="0.0"/>
+  </joint>
+
+  
+ <link name="conexion_mr">
+  <visual>
+      <origin xyz="0 -2.7755575615628913511e-17 -0.0020000000000000017764" rpy="1.570796326794896558 4.3612823454010153235e-25 -6.3908232138425416616e-17" />
+      <geometry>
+      <mesh filename="package://robot_description/archives/conexion_mr.stl"/>
+      </geometry>
+      <material name="conexion_mr_material">
+      <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+      </material>
+  </visual>
+  <collision>
+      <origin xyz="0 -2.7755575615628913511e-17 -0.0020000000000000017764" rpy="1.570796326794896558 4.3612823454010153235e-25 -6.3908232138425416616e-17" />
+      <geometry>
+      <mesh filename="package://robot_description/archives/conexion_mr.stl"/>
+      </geometry>
+  </collision>
+  <inertial>
+      <origin xyz="-4.59864341995735492e-19 0.031641568025377972417 -1.6895403053702670593e-05" rpy="0 0 0"/>
+      <mass value="0.49858138809996860319" />
+      <inertia ixx="0.00041914620991723221212" ixy="-3.9967895781289677242e-20"  ixz="-3.4618973733788555295e-11" iyy="0.00043682773523941376874" iyz="-2.1980440093701875885e-07" izz="6.245717210035468044e-05" />
+  </inertial>
+  </link>
+  
+   
+  <gazebo reference="conexion_mr">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>six_wheel_drive/camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!--
+      <gazebo>
+    <plugin name="diffdrive_controller" filename="libdiffdrive_plugin_6w.so">
+            
+      <robotNamespace>/robot_description</robotNamespace>
+      <topicName>cmd_vel</topicName>
+      <bodyName>l1</bodyName>
+      <frontLeftJoint>Junta_R1</frontLeftJoint>
+      <frontRightJoint>Junta_R2</frontRightJoint>
+      <midLeftJoint>Junta_R3</midLeftJoint>
+      <midRightJoint>Junta_R4</midRightJoint>
+      <rearLeftJoint>Junta_R5</rearLeftJoint>
+      <rearRightJoint>Junta_R6</rearRightJoint>
+      <wheelSeparation>0.12</wheelSeparation>
+      <wheelDiameter>0.10</wheelDiameter>
+      <torque>10.0</torque>
+    </plugin>
+  </gazebo>
+  -->
+</robot>

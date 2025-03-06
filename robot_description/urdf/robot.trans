@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<robot name="robot">
+
+    <transmission name="Rev4_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R1">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev4_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+
+    <transmission name="Rev5_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R2">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev5_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+
+    <transmission name="Rev6_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R3">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev6_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+
+    <transmission name="Rev7_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R4">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev7_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+
+    <transmission name="Rev8_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R5">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev8_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+
+    <transmission name="Rev9_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="Junta_R6">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="Rev9_actr">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+    </transmission>
+</robot>

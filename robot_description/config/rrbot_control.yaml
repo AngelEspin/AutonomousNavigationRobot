@@ -1,0 +1,37 @@
+robot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Junta_camara
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+
+  # Velocity Effort Controllers ---------------------------------------
+  joint1_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint2_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R2
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint3_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R3
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint4_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R4
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint5_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R5
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  joint6_velocity_effort_controller:
+    type: effort_controllers/JointVelocityController
+    joint: Junta_R6
+    pid: {p: 100.0, i: 0.01, d: 10.0}

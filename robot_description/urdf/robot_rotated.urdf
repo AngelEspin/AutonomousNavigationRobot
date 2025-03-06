@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<robot name="Robot_6ruedas">
+  <link name="dummy">
+  </link>  
+
+    <link name="l1">
+        <visual>
+            <origin xyz="-0.1888685832554042876 -0.17011464359603345464 0.21803874853775565001" rpy="-6.0658661501779090502e-09 2.9721156499403781953e-09 3.8418044321784808473e-10" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l1.stl"/>
+            </geometry>
+            <material name="l1_material">
+                <color rgba="0.12941176470588236502 0.54117647058823525885 0.12941176470588236502 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-0.1888685832554042876 -0.17011464359603345464 0.21803874853775565001" rpy="-6.0658661501779090502e-09 2.9721156499403781953e-09 3.8418044321784808473e-10" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l1.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-0.2090648822512374827 -0.15721872949052079216 0.2189618657562836801" rpy="0 0 0"/>
+            <mass value="1.1600736868674612623" />
+            <inertia ixx="0.0066008651106547033133" ixy="-0.0014781260713474368186"  ixz="-0.00013558622438702470719" iyy="0.015519266854376972259" iyz="-6.6497650602384029972e-05" izz="0.010696687117737165365" />
+        </inertial>
+    </link>
+
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy"/>
+    <child link="l1"/>
+  </joint>
+    <link name="l2_l3_modificado-2">
+        <visual>
+            <origin xyz="2.7755575615628913511e-17 2.7755575615628913511e-17 -0.038999999999999979128" rpy="1.570796326794896558 2.4647867877398836998e-25 -2.3917022806420993237e-19" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+            </geometry>
+            <material name="l2_l3_modificado-2_material">
+                <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="2.7755575615628913511e-17 2.7755575615628913511e-17 -0.038999999999999979128" rpy="1.570796326794896558 2.4647867877398836998e-25 -2.3917022806420993237e-19" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.041604917307636664348 -0.0009418623224225567683 -0.016999999999999980405" rpy="0 0 0"/>
+            <mass value="0.19878085526035951802" />
+            <inertia ixx="0.00045600719533735699363" ixy="-2.1979347753071080989e-06"  ixz="4.1067788460621067407e-28" iyy="0.00011179489061714407375" iyz="4.3674831402817921823e-29" izz="0.00048695372639961936748" />
+        </inertial>
+    </link>
+    <link name="rueda10cm">
+        <visual>
+            <origin xyz="0 0 -0.0030000000000000026645" rpy="3.141592653589793116 -1.0023166649532574314e-24 1.5083150845212419517e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.0030000000000000026645" rpy="3.141592653589793116 -1.0023166649532574314e-24 1.5083150845212419517e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-9.3545289394551002907e-19 1.6538959949294812131e-27 -0.022983887084686488445" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322421698" ixy="-3.9489663250360805483e-21"  ixz="2.5563994575080726093e-28" iyy="0.00029793490712322416277" iyz="-1.1453367324406402029e-28" izz="0.00049087753367729638869" />
+        </inertial>
+    </link>
+
+    <joint name="Junta_R2" type="continuous">
+        <origin xyz="0.060104076400856631945 0.060104076400856493168 0.0049999999999999489297" rpy="3.1415926535897926719 -4.3418562004129973851e-16 -0.23928943232462576707" />
+        <parent link="l2_l3_modificado-2" />
+        <child link="rueda10cm" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <link name="rueda10cm_2">
+        <visual>
+            <origin xyz="0 -3.0357660829594124152e-17 -0.0029999999999999471534" rpy="-3.141592653589793116 3.3704244979080316688e-25 6.9381089612603703018e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -3.0357660829594124152e-17 -0.0029999999999999471534" rpy="-3.141592653589793116 3.3704244979080316688e-25 6.9381089612603703018e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-9.3545291896116197248e-19 -3.0357660815074603013e-17 -0.022983887084686429464" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322421698" ixy="-2.8799980243520215934e-21"  ixz="4.7107423451855293064e-28" iyy="0.00029793490712322427119" iyz="-1.4018466571375642208e-28" izz="0.00049087753367729617185" />
+        </inertial>
+    </link>
+
+
+    <joint name="Junta_R4" type="continuous">
+        <origin xyz="0.060104076400856576434 -0.060104076400856493168 0.0050000000000000044409" rpy="-3.141592653589793116 -1.1589827815473840127e-17 2.4002979575539105106" />
+        <parent link="l2_l3_modificado-2" />
+        <child link="rueda10cm_2" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <joint name="Junta_Pasiva_Derecha" type="revolute">
+        <origin xyz="-0.15494266865261210886 -0.15188434120304603048 0.34203874832633668346" rpy="-2.6643008095038062813e-09 -6.2072301502844685754e-09 -1.6209467145960121393" />
+        <parent link="l1" />
+        <child link="l2_l3_modificado-2" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-2.0071286397934788859" upper="1.2217304763960306069"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <link name="l2_l3_modificado-2_2">
+        <visual>
+            <origin xyz="0 2.7755575615628913511e-17 -0.038999999999999993006" rpy="1.570796326794896558 7.1125854419411447458e-25 5.5920709708487137397e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+            </geometry>
+            <material name="l2_l3_modificado-2_material">
+                <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 2.7755575615628913511e-17 -0.038999999999999993006" rpy="1.570796326794896558 7.1125854419411447458e-25 5.5920709708487137397e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/l2_l3_modificado-2.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="0.04160491730763665047 -0.00094186232242255633462 -0.016999999999999994282" rpy="0 0 0"/>
+            <mass value="0.19878085526035951802" />
+            <inertia ixx="0.00045600719533735721047" ixy="-2.1979347753071059813e-06"  ixz="2.2250277826967671503e-29" iyy="0.00011179489061714404665" iyz="4.2510698171069418395e-29" izz="0.00048695372639961936748" />
+        </inertial>
+    </link>
+
+    <link name="rueda10cm_3">
+        <visual>
+            <origin xyz="5.5511151231257827021e-17 -5.5511151231257827021e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.3993747927658357452e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="5.5511151231257827021e-17 -5.5511151231257827021e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.3993747927658357452e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="5.4575698335562366393e-17 -5.5511151231257827021e-17 -0.022983887084686488445" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322410856" ixy="6.7137901454715408303e-21"  ixz="0" iyy="0.00029793490712322416277" iyz="0" izz="0.00049087753367729617185" />
+        </inertial>
+    </link>
+
+
+    <joint name="Junta_R3" type="continuous">
+        <origin xyz="0.06010407640085660419 0.060104076400856520923 0.0049999999999999628075" rpy="3.141592653589793116 1.590994605787964269e-16 -1.8876662512036173069" />
+        <parent link="l2_l3_modificado-2_2" />
+        <child link="rueda10cm_3" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <link name="rueda10cm_4">
+        <visual>
+            <origin xyz="5.5511151231257827021e-17 -5.5511151231257827021e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.3993747927658357452e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="5.5511151231257827021e-17 -5.5511151231257827021e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.3993747927658357452e-18" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="5.4575698335562366393e-17 -5.5511151231257827021e-17 -0.022983887084686488445" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322410856" ixy="6.7137901454715408303e-21"  ixz="0" iyy="0.00029793490712322416277" iyz="0" izz="0.00049087753367729617185" />
+        </inertial>
+    </link>
+
+    <joint name="Junta_R1" type="continuous">
+        <origin xyz="0.06010407640085660419 -0.060104076400856465412 0.0049999999999999766853" rpy="3.141592653589793116 1.590994605787964269e-16 -1.8876662512036173069" />
+        <parent link="l2_l3_modificado-2_2" />
+        <child link="rueda10cm_4" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <joint name="Junta_Pasiva_Izquierda" type="revolute">
+        <origin xyz="-0.15494266938969317171 -0.1518843427073778285 0.094038748326342375128" rpy="3.1415926512234007006 -6.3267992997233865578e-09 -1.6684737314627220428" />
+        <parent link="l1" />
+        <child link="l2_l3_modificado-2_2" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="-1.2217304763960306069" upper="2.0071286397934788859"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <link name="rueda10cm_5">
+        <visual>
+            <origin xyz="0 -2.7755575615628913511e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 2.6823052775185617915e-34" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 -2.7755575615628913511e-17 -0.0030000000000000026645" rpy="3.141592653589793116 -0 2.6823052775185617915e-34" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-9.3545289569545966553e-19 -2.7755575615628913511e-17 -0.022983887084686488445" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322421698" ixy="3.4544732082981603049e-37"  ixz="0" iyy="0.00029793490712322416277" iyz="0" izz="0.00049087753367729617185" />
+        </inertial>
+    </link>
+
+    <joint name="Junta_R5" type="continuous">
+        <origin xyz="-0.34311479563244728919 -0.21198648776128214966 0.094038749250182226969" rpy="-6.0658661501779123589e-09 2.9721157209946501831e-09 -4.9303806576313237838e-32" />
+        <parent link="l1" />
+        <child link="rueda10cm_5" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+
+    <link name="rueda10cm_6">
+        <visual>
+            <origin xyz="0 0 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.6823052775185617915e-34" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+            <material name="rueda10cm_material">
+                <color rgba="0.92156862745098033773 0.92156862745098033773 0.92156862745098033773 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 -0.0030000000000000026645" rpy="3.141592653589793116 -0 -2.6823052775185617915e-34" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/rueda10cm.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-9.3545289569545966553e-19 -8.000154850941515866e-36 -0.022983887084686488445" rpy="0 0 0"/>
+            <mass value="0.39299360600999816429" />
+            <inertia ixx="0.00029793490712322421698" ixy="-3.4544732082981603049e-37"  ixz="0" iyy="0.00029793490712322416277" iyz="0" izz="0.00049087753367729617185" />
+        </inertial>
+    </link>
+
+    <joint name="Junta_R6" type="continuous">
+        <origin xyz="-0.3431147948953625626 -0.21198648625694732628 0.34203874925018223907" rpy="3.1415926475239270843 2.9721157209946501831e-09 -4.9303806576313237838e-32" />
+        <parent link="l1" />
+        <child link="rueda10cm_6" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" />
+        <joint_properties friction="0.0"/>
+    </joint>
+
+    <link name="conexion_mr">
+        <visual>
+            <origin xyz="-1.3877787807814456755e-17 6.9388939039072283776e-18 -0.0020000000000000017764" rpy="1.570796326794896558 -8.2718061255302785854e-25 5.5178888487446586962e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/conexion_mr.stl"/>
+            </geometry>
+            <material name="conexion_mr_material">
+                <color rgba="0.2313725490196078538 0.38039215686274507888 0.7058823529411765163 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="-1.3877787807814456755e-17 6.9388939039072283776e-18 -0.0020000000000000017764" rpy="1.570796326794896558 -8.2718061255302785854e-25 5.5178888487446586962e-17" />
+            <geometry>
+                <mesh filename="package://robot_description/archives/conexion_mr.stl"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <origin xyz="-1.1532751661469118139e-17 0.03164156802537802099 -1.6895403053702236912e-05" rpy="0 0 0"/>
+            <mass value="0.49858138809996860319" />
+            <inertia ixx="0.0004191462099172321037" ixy="4.7231690887612309217e-20"  ixz="-3.4618973734214023397e-11" iyy="0.000436827735239414094" iyz="-2.1980440093701510602e-07" izz="6.2457172100354707545e-05" />
+        </inertial>
+    </link>
+
+    <joint name="Junta_Camara" type="revolute">
+        <origin xyz="-0.071868583309864980668 -0.094114643602644210141 0.2095387477290122924" rpy="3.1415926531307878378 6.7392520686235646216e-09 1.047197552091695405" />
+        <parent link="l1" />
+        <child link="conexion_mr" />
+        <axis xyz="0 0 1"/>
+        <limit effort="1" velocity="20" lower="4.712388980384689674" upper="5.2359877559829888227"/>
+        <joint_properties friction="0.0"/>
+    </joint>
+
+</robot>
