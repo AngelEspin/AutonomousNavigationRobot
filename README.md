@@ -1,8 +1,4 @@
-# NAR6W_MI_2024
-
-
-# Título del proyecto
-
+# 6 wheeled Autonomous Navigation Robot
 
 <p align="center">
     <img src="imgs/stairs-ascending-final-demo.gif" alt="Ascending stairs demo" width="600">
