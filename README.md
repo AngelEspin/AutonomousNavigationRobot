@@ -1,5 +1,5 @@
 # 6 wheeled Autonomous Navigation Robot
-![Poster](Pictures/POSTER_MI_ESPIN_SORIANO.pdf)
+![Poster](Pictures/poster.jpg)
 ![Main Window Overview](Pictures/3.png)
 <p align="center">
     <img src="imgs/stairs-ascending-final-demo.gif" alt="Ascending stairs demo" width="600">
