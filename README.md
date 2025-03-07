@@ -135,7 +135,7 @@ To control the robot with the keyboard, run:
 ```bash
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
-[map](https://youtu.be/ygbIhnnnd6c)
+[![Controller](Pictures/controller.png)](https://youtu.be/ygbIhnnnd6c)
 
 #### [Terminal 6]
 
@@ -155,7 +155,7 @@ To perform SLAM mapping, run:
 roslaunch robot_description robot_slam.launch slam_methods:=gmapping
 ```
 
-[map](Pictures/controller_v.2.mp4)
+[![Nacigation](Pictures/navigation.png)](https://youtu.be/YMJ61hjZp_g)
 
 
 #### [Terminal 2]
@@ -187,7 +187,7 @@ roslaunch navegacion navegacion.launch
 ```
 This navigation system has the mpc as local planner already, you can modify it on the navigation folder
 
-[navigation](Pictures/navigation.mp4)
+[![Odometry](Pictures/odometry.png)](https://youtu.be/DRgYoYt28n4)
 
 ## Odometry
 
@@ -197,7 +197,7 @@ To obtain odometry data, run:
 ```bash
 rosrun robot_description odometry.py
 ```
-[map](Pictures/odometry.mp4)
+[![Slam](Pictures/slam.png)](https://youtu.be/i_TXes6mMGM)
 
 
 ## Send Wheel Velocities
