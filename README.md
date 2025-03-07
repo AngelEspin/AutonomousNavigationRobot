@@ -155,7 +155,8 @@ To perform SLAM mapping, run:
 roslaunch robot_description robot_slam.launch slam_methods:=gmapping
 ```
 
-https://github.com/user-attachments/assets/010b1bd3-88f7-4edd-bd1a-c674e803b92c
+![map](Pictures/controller_v.2.mp4)
+
 
 #### [Terminal 2]
 
@@ -173,7 +174,7 @@ rosrun map_server map_saver -f ~/map
 ```
 
 It should look like this:
-![map](https://github.com/user-attachments/assets/ca13292a-122e-4900-a1e0-b5513745588f)
+![map](Pictures/map.jpg)
 
 
 ## Navigation
@@ -186,7 +187,7 @@ roslaunch navegacion navegacion.launch
 ```
 This navigation system has the mpc as local planner already, you can modify it on the navigation folder
 
-https://github.com/user-attachments/assets/5cdbc2de-3791-4e66-a351-20d5b5aa3fde
+![map](Pictures/navigation.mp4)
 
 ## Odometry
 
@@ -196,7 +197,8 @@ To obtain odometry data, run:
 ```bash
 rosrun robot_description odometry.py
 ```
-https://github.com/user-attachments/assets/efd66fd8-cf9c-4709-9ebf-98df89e06510
+![map](Pictures/odometry.mp4)
+
 
 ## Send Wheel Velocities
 
@@ -217,7 +219,7 @@ To visualize the robot in RViz, run:
 roslaunch robot_description rvizRobot.launch
 ```
 
-![rviz](https://github.com/user-attachments/assets/893fb940-6927-4a70-8f7b-b0f7aaf980b4)
+![map](Pictures/Rviz.png)
 
 ## Troubleshooting Compilation Errors
 
