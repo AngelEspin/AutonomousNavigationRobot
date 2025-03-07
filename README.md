@@ -135,7 +135,7 @@ To control the robot with the keyboard, run:
 ```bash
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
-[map](Pictures/controller_v.2.mp4)
+[map](https://youtu.be/ygbIhnnnd6c)
 
 #### [Terminal 6]
 
