@@ -135,7 +135,7 @@ To control the robot with the keyboard, run:
 ```bash
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
-https://github.com/user-attachments/assets/859120ea-e95d-4e43-8485-05810dd37e6f
+![map](Pictures/controller_v.2.mp4)
 
 #### [Terminal 6]
 
@@ -187,7 +187,7 @@ roslaunch navegacion navegacion.launch
 ```
 This navigation system has the mpc as local planner already, you can modify it on the navigation folder
 
-![map](Pictures/navigation.mp4)
+![navigation](Pictures/navigation.mp4)
 
 ## Odometry
 
